@@ -52,13 +52,17 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Neural Projection Mapping Using Reflectance Fields</h1>
+            <h1 class="title is-1 publication-title">Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://yoterel.github.io/" target="_blank">Yotam Erel</a><sup>1</sup>,</span>
+			  <span class="author-block">
+                <a href="" target="_blank">Or Kozlovsky-Mordenfeld</a><sup>1</sup>,</span>
               <span class="author-block">
                 <a href="https://daisukeiwai.org/" target="_blank">Daisuke Iwai</a><sup>2</sup>,</span>
+			  <span class="author-block">
+                <a href="https://kosuke-sato.jimdofree.com/" target="_blank">Kosuke Sato</a><sup>2</sup>,</span>
               <span class="author-block">
                 <a href="https://www.cs.tau.ac.il/~amberman/" target="_blank">Amit H. Bermano</a><sup>1</sup>
               </span>
@@ -101,15 +105,6 @@
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://osf.io/2xcn4/download" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-folder"></i>
-                    </span>
-                    <span>Dataset</span>
                   </a>
                 </span>
                 <!-- ArXiv abstract Link -->
@@ -155,30 +150,13 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We introduce a high resolution spatially adaptive light source, or a projector, into a neural reflectance
-              field that allows
-              to both calibrate the projector and photo realistic light editing. The projected texture is fully
-              differentiable with respect to all scene
-              parameters, and can be optimized to yield a desired appearance suitable for applications in augmented
-              reality and projection mapping.
-              Our neural field consists of three neural networks, estimating geometry, material, and transmittance.
-              Using an analytical BRDF model
-              and carefully selected projection patterns, our acquisition process is simple and intuitive, featuring a
-              fixed uncalibrated projected and
-              a handheld camera with a co-located light source. As we demonstrate, the virtual projector incorporated
-              into the pipeline improves
-              scene understanding and enables various projection mapping applications, alleviating the need for time
-              consuming calibration steps
-              performed in a traditional setting per view or projector location. In addition to enabling novel viewpoint
-              synthesis, we demonstrate
-              state-of-the-art performance projector compensation for novel viewpoints, improvement over the baselines
-              in material and scene
-              reconstruction, and three simply implemented scenarios where projection image optimization is performed,
-              including the use of a
-              2D generative model to consistently dictate scene appearance from multiple viewpoints. We believe that
-              neural projection mapping
-              opens up the door to novel and exciting downstream tasks, through the joint optimization of the scene and
-              projection images.
+              We present a technique for dynamically projecting 3D content onto human hands with short perceived motion-to-photon latency.
+			  Computing the pose and shape of human hands accurately and quickly is a challenging task due to their articulated and deformable nature.
+			  We combine a slower 3D coarse estimation of the hand pose with high speed 2D correction steps which improve the alignment of the projection to the hands, increase the projected surface area, and reduce perceived latency.
+			  Since our approach leverages a full 3D reconstruction of the hands, any arbitrary texture or reasonably performant effect can be applied, which was not possible before.
+			  We conducted two user studies to assess the benefits of using our method.
+			  The results show subjects are less sensitive to latency artifacts and perform faster and with more ease a given associated task over the naïve approach of directly projecting rendered frames from the 3D pose estimation.
+			  We demonstrate several novel use cases and applications.
             </p>
           </div>
         </div>
@@ -213,41 +191,6 @@
   </section>
   <!-- End image carousel -->
 
-  <!-- Image carousel -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3">Novel viewpoints & projections</h2>
-        <div class="level-set has-text-justified">
-          <p>
-            The following scenes were obtained using our method and relit with new projected patterns, viewed from a
-            novel viewpoint.
-            Any novel pattern is possible, and can also be optimized to yield a desired appearance.
-          </p>
-          <br>
-        </div>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/castle_grid.png" alt=""
-              style="width:50%; height:50%; margin-left: auto; margin-right: auto; display:block" />
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/zoo_grid.png" alt=""
-              style="width:50%; height:50%; margin-left: auto; margin-right: auto; display:block" />
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/pear_grid.png" alt=""
-              style="width:50%; height:50%; margin-left: auto; margin-right: auto; display:block" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End image carousel -->
-
   <!-- <section class="section hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -267,23 +210,43 @@
     </div>
   </div>
 </section> -->
-
   <section class="section hero is-small">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
           <div class="content">
-            <h2 class="title is-3">Multiview text-to-projection</h2>
+            <h2 class="title is-3">Gaming</h2>
             <div class="level-set has-text-justified">
               <p>
-                We can optimize for several viewpoints at once, and use a 2D generative model to consistently dictate
-                scene appearance from multiple viewpoints.
-                The 2nd column shown here is the final reprojection of the optimzed texture, i.e. a true spatial
-                augmentation of the 1st column using only a projector.
+                We modified an open sourced space shooter game for the purpose of showing a simple gaming application with the system.
+				Players can move the space ship to the left or right by tilting their palm around the elbow-to-wrist axis, and shoot alien ships in front of the space ship.
+				The score is displayed on the thumb, while the HP is visualized as bars displayed on the fingers, which decrease every time the spaceship is hit.
               </p>
               <br>
             </div>
-            <img src="static/images/t2p.png" alt="text-to-projection" class="center-image" />
+            <img src="static/images/spaceshooter.png" alt="spaceshooter" class="center-image" style="width:50%; height:50%;/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Projegraphy</h2>
+            <div class="level-set has-text-justified">
+              <p>
+                Inspired by \textit{Shadowgraphy}, the art of performing a story or show using images made by hand shadows, we developed a new concept art form for projecting live content onto hands depending on their shape and form.
+				We name this \textit{Projegraphy}.
+				Here, the hand or hands form some intricate shape, and the system generates suitable adaptive content for that shape.
+				For example, the hand imitates some features of an animal, and the system projects relevant content without any additional user input.
+				This can be used both for performances, and for social gaming ("guessing the animal").
+              </p>
+              <br>
+            </div>
+            <img src="static/images/projegraphy.png" alt="projegraphy" class="center-image" />
           </div>
         </div>
       </div>
@@ -377,12 +340,12 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{erel2023neural,
-        title={Neural Projection Mapping Using Reflectance Fields},
-        author={Erel, Yotam and Iwai, Daisuke and Bermano, Amit H},
-        journal={IEEE Transactions on Visualization and Computer Graphics},
-        year={2023},
-        publisher={IEEE}
+      <pre><code>@article{erel2024casper,
+        title={Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands},
+        author={Erel, Yotam and Kozlovsky-Mordenfeld, Or and Iwai, Daisuke and Kosuke, Sato and Bermano, Amit H},
+        journal={?},
+        year={2024},
+        publisher={?}
       }</code></pre>
     </div>
   </section>
