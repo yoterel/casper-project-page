@@ -45,23 +45,22 @@
 </head>
 
 <body>
-
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto Hands</h1>
+            <h1 class="title is-1 publication-title">Casper DPM: Cascaded Perceptual Dynamic Projection Mapping onto
+              Hands</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://yoterel.github.io/" target="_blank">Yotam Erel</a><sup>1</sup>,</span>
-			  <span class="author-block">
-                <a href="" target="_blank">Or Kozlovsky-Mordenfeld</a><sup>1</sup>,</span>
+              <span class="author-block">
+                Or Kozlovsky-Mordenfeld<sup>1</sup>,</span>
               <span class="author-block">
                 <a href="https://daisukeiwai.org/" target="_blank">Daisuke Iwai</a><sup>2</sup>,</span>
-			  <span class="author-block">
+              <span class="author-block">
                 <a href="https://kosuke-sato.jimdofree.com/" target="_blank">Kosuke Sato</a><sup>2</sup>,</span>
               <span class="author-block">
                 <a href="https://www.cs.tau.ac.il/~amberman/" target="_blank">Amit H. Bermano</a><sup>1</sup>
@@ -150,13 +149,20 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We present a technique for dynamically projecting 3D content onto human hands with short perceived motion-to-photon latency.
-			  Computing the pose and shape of human hands accurately and quickly is a challenging task due to their articulated and deformable nature.
-			  We combine a slower 3D coarse estimation of the hand pose with high speed 2D correction steps which improve the alignment of the projection to the hands, increase the projected surface area, and reduce perceived latency.
-			  Since our approach leverages a full 3D reconstruction of the hands, any arbitrary texture or reasonably performant effect can be applied, which was not possible before.
-			  We conducted two user studies to assess the benefits of using our method.
-			  The results show subjects are less sensitive to latency artifacts and perform faster and with more ease a given associated task over the naïve approach of directly projecting rendered frames from the 3D pose estimation.
-			  We demonstrate several novel use cases and applications.
+              We present a technique for dynamically projecting 3D content onto human hands with short perceived
+              motion-to-photon latency.
+              Computing the pose and shape of human hands accurately and quickly is a challenging task due to their
+              articulated and deformable nature.
+              We combine a slower 3D coarse estimation of the hand pose with high speed 2D correction steps which
+              improve the alignment of the projection to the hands, increase the projected surface area, and reduce
+              perceived latency.
+              Since our approach leverages a full 3D reconstruction of the hands, any arbitrary texture or reasonably
+              performant effect can be applied, which was not possible before.
+              We conducted two user studies to assess the benefits of using our method.
+              The results show subjects are less sensitive to latency artifacts and perform faster and with more ease a
+              given associated task over the naïve approach of directly projecting rendered frames from the 3D pose
+              estimation.
+              We demonstrate several novel use cases and applications.
             </p>
           </div>
         </div>
@@ -215,16 +221,21 @@
       <div class="columns is-centered">
         <div class="column is-full">
           <div class="content">
-            <h2 class="title is-3">Gaming</h2>
+            <h2 class="title is-3">Projegraphy</h2>
             <div class="level-set has-text-justified">
               <p>
-                We modified an open sourced space shooter game for the purpose of showing a simple gaming application with the system.
-				Players can move the space ship to the left or right by tilting their palm around the elbow-to-wrist axis, and shoot alien ships in front of the space ship.
-				The score is displayed on the thumb, while the HP is visualized as bars displayed on the fingers, which decrease every time the spaceship is hit.
+                Inspired by <i>Shadowgraphy</i>, the art of performing a story or show using images made by hand
+                shadows, we developed a new concept art form for projecting live content onto hands depending on their
+                shape and form. We name this <i>Projegraphy</i>.
+                Here, the hand or hands form some intricate shape, and the system generates suitable adaptive content
+                for that shape.
+                For example, the hand imitates some features of an animal, and the system projects relevant content
+                without any additional user input.
+                This can be used both for performances, and for social gaming ("guessing the animal").
               </p>
               <br>
             </div>
-            <img src="static/images/spaceshooter.png" alt="spaceshooter" class="center-image" style="width:50%; height:50%;/>
+            <img src="static/images/projegraphy.png" alt="projegraphy" class="center-image" />
           </div>
         </div>
       </div>
@@ -235,30 +246,31 @@
       <div class="columns is-centered">
         <div class="column is-full">
           <div class="content">
-            <h2 class="title is-3">Projegraphy</h2>
+            <h2 class="title is-3">Gaming</h2>
             <div class="level-set has-text-justified">
               <p>
-                Inspired by \textit{Shadowgraphy}, the art of performing a story or show using images made by hand shadows, we developed a new concept art form for projecting live content onto hands depending on their shape and form.
-				We name this \textit{Projegraphy}.
-				Here, the hand or hands form some intricate shape, and the system generates suitable adaptive content for that shape.
-				For example, the hand imitates some features of an animal, and the system projects relevant content without any additional user input.
-				This can be used both for performances, and for social gaming ("guessing the animal").
+                We modified an open sourced space shooter game for the purpose of showing a simple gaming application
+                with the system.
+                Players can move the space ship to the left or right by tilting their palm around the elbow-to-wrist
+                axis, and shoot alien ships in front of the space ship.
+                The score is displayed on the thumb, while the HP is visualized as bars displayed on the fingers, which
+                decrease every time the spaceship is hit.
               </p>
               <br>
             </div>
-            <img src="static/images/projegraphy.png" alt="projegraphy" class="center-image" />
+            <img src="static/images/spaceshooter.png" alt="spaceshooter" class="center-image"
+              style="width:50%; height:50%;" />
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <!-- Youtube video -->
   <!--
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
+<section class=" hero is-small is-light">
+            <div class="hero-body">
+              <div class="container">
+                <!-- Paper video. -->
   <!--
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
